@@ -1,13 +1,17 @@
 import os
-import platform
+import requests
 
 def installdependancy():
     install = open("install.dat", "r")
     if install==0 :
-        os.system(("cmd /c 'mkdir 7zip'"))
-        os.system("cmd.exe /c 'curl https://www.7-zip.org/a/7z2107-x64.exe' ")
-        os.system("cmd /c 'start 7z2107-x64.exe /D=.\7zip\'")
-    
+        os.system(("cmd /c 'mkdir %APPDATA%\gameinstall'"))
+        os.system("cmd /c 'mkdir %APPDATA%\gameinstall\dependancy'")
+        url = 'https://mega.nz/MEGAcmdSetup32.exe'
+        r = requests.get(url)
+        open('MEGAcmdSetup32.exe', 'wb').write(r.content)
+        os.system("cp MEGAcmdSetup32.exe %APPDATA%\gameinstall\dependancy") 
+        os.system("")
+        os.system("")
 
 
     else:
