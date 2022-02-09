@@ -1,6 +1,6 @@
 # gameinstall
 Ceci est un logiciel pour installer n'importe quel type de jeu sur n'importe quel ordinateur (enfin c'est la plan) et notamment sur les pcs non-admins ou très TRES LENTS.
-Toute reproduction est interdite. La diffusion est autorisé autant que vous le voulez :) .
+Toutes distributions de ce logiciel modifié est interdite. La diffusion est autorisé autant que vous le voulez .
 Ce logiciel est en phase de développement (pour l'instant il ne fais pratiquement rien mais sera bientot fonctionnel)
 J'espère que cela arrivera rapidement.
 
