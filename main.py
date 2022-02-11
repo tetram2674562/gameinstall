@@ -1,24 +1,5 @@
 import os
-import requests
 
-def installdependancy():
-    install = open("install.dat", "r")
-    if install==0 :
-        os.system(("cmd /c 'mkdir %APPDATA%\gameinstall'"))
-        os.system("cmd /c 'mkdir %APPDATA%\gameinstall\dependancy'")
-        url = 'https://mega.nz/MEGAcmdSetup32.exe'
-        r = requests.get(url)
-        open('MEGAcmdSetup32.exe', 'wb').write(r.content)
-        os.system("cp MEGAcmdSetup32.exe %APPDATA%\gameinstall\dependancy") 
-        os.system("")
-        os.system("")
-
-
-    else:
-        menu()
-    
-    
-    return
 
 
 
@@ -35,17 +16,23 @@ def menu():
         dependency=(input("Pour valider l'installation des dépendances [O/N]"))
         if dependency=='O' :
             print('installation')
-            installdependancy()
+            os.system("cmd /c mkdir %APPDATA%\gameinstall")
+            os.system("cmd /c mkdir %APPDATA%\gameinstall\dependancy")
+            os.system("cmd /c curl --url https://mega.nz/MEGAcmdSetup32.exe -O %APPDATA%\gameinstall\dependancy\MEGAcmdSetup32.exe")
+            os.system("cmd /c move MEGAcmdSetup32.exe %APPDATA%\gameinstall\dependancy\ ")
+            os.system("cmd /c set __COMPAT_LAYER=RunAsInvoker & start %APPDATA%\gameinstall\dependancy\MEGAcmdSetup32.exe")
+            os.system("")
+            menu()
         
         else:
             print('annulation')
 
 
     elif selection=='3' :
-        print('uwa')
+        print('UwU')
 
     elif selection=='2' :
-        print('uwo')
+        print('UwU')
 
     elif selection=='1' :
         print('kyah')
@@ -55,6 +42,7 @@ def menu():
     return
 
 menu()
+
 
 
 
